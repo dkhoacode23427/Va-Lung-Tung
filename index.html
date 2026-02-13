@@ -10,45 +10,54 @@
     <title>Va Lung Tung</title>
 
     <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
         body {
-             margin: 0;
+            margin: 0;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow-x: hidden;
+            position: relative;
         }
 
 
         .message {
-            position: relative;
-        font-family: Arial, sans-serif;
-        font-size: clamp(16px, 3vw, 26px);
-    
-        width: 90%;
-        max-width: 900px;
-    
-        padding: 30px;
-        box-sizing: border-box;
-    
-        line-height: 1.6;
-        text-align: center;
-    
-        color: white;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    
-        backdrop-filter: blur(6px);
-        background: rgba(0,0,0,0.25);
-        border-radius: 20px;
-    
-        max-height: 80vh;
-        overflow-y: auto;
-    
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 2s ease, transform 2s ease;
-    
-        z-index: 10;
+           position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(40px);
+        
+            font-family: Arial, sans-serif;
+            font-size: clamp(16px, 3vw, 26px);
+        
+            width: 90%;
+            max-width: 900px;
+        
+            padding: 30px;
+            box-sizing: border-box;
+        
+            line-height: 1.6;
+            text-align: center;
+        
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        
+            backdrop-filter: blur(6px);
+            background: rgba(0,0,0,0.25);
+            border-radius: 20px;
+        
+            max-height: 80vh;
+            overflow-y: auto;
+        
+            opacity: 0;
+            transition: opacity 2s ease, transform 2s ease;
+        
+            z-index: 10;
         }
 
         #welcomeText {
@@ -331,7 +340,7 @@
                     // Show main message
                     setTimeout(function () {
                         message.style.opacity = "1";
-                        message.style.transform = "translateY(0)";
+                        message.style.transform = "translate(-50%, -50%) translateY(0)";
                     }, 10500);
 
                 }, 2000);
@@ -359,6 +368,7 @@
 </html>
 
 ________
+
 
 
 
